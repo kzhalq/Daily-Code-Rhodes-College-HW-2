@@ -1,0 +1,36 @@
+print("Do you want to enter distance as miles or kilometers (type m or k): ")
+distanceType = input() #takes the user input and stores it for later use
+if distanceType == "m":
+	print("How many miles would you like to scopter?")
+	distanceInMiles = float(input())
+	print("That is ", distanceInMiles * 1.6, "kilometers.")
+	distanceInMins = distanceInMiles/15
+	print("Total time in minutes: ", distanceInMins)
+	companyA = 1 + (.15*distanceInMins)
+	companyB = 2.5 + (0 if distanceInMins <= 5 else (.12*(distanceInMins-5)))
+	companyC = 5 + (.06*distanceInMins)
+
+	if companyA <= companyB and companyA <= companyC:
+		print("You should use companyA", companyA)
+	elif companyB <= companyA and companyB <= companyC:
+		print("You should use companyB", companyB)
+	elif companyC <= companyA and companyC <= companyB:
+		print("You should use companyC", companyC)
+
+elif distanceType == "k":
+	print("How many kilometers would you like to scopter?")
+	distanceInKilometers = float(input())
+	print("That is ", distanceInKilometers * (1/1.6), "miles.")
+
+	distanceInMins = (distanceInKilometers * (1/1.6))/15
+	print("Total time in minutes: ", distanceInMins)
+	companyA = 1 + (.15*distanceInMins)
+	companyB = 2.5 + (0 if distanceInMins <= 5 else (.12*(distanceInMins-5)))
+	companyC = 5 + (.06*distanceInMins)
+
+	if companyA <= companyB and companyA <= companyC:
+		print("You should use companyA", companyA)
+	elif companyB <= companyA and companyB <= companyC:
+		print("You should use companyB", companyB)
+	elif companyC <= companyA and companyC <= companyB:
+		print("You should use companyC", companyC)
